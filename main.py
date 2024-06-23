@@ -25,23 +25,7 @@ class App:
         #
         ray.close_window()
 
-    def run1(self):
-        count_fps = 0
-        num_frames = 50_000
-        #
-        for i in range(num_frames):
-            if ray.window_should_close():
-                break
-            self.dt = ray.get_frame_time()
-            self.engine.update()
-            self.engine.draw()
-            #
-            count_fps += ray.get_fps()
-        #
-        print(count_fps / num_frames)
-
 
 if __name__ == '__main__':
     app = App()
     app.run()
-    # cProfile.run('app.run()')
